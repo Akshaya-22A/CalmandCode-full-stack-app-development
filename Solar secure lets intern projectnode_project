@@ -1,0 +1,272 @@
+[1mdiff --cc README.md[m
+[1mindex 4c772bc,399992f..0000000[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@@ -1,132 -1,132 +1,267 @@@[m
+[32m++<<<<<<< HEAD[m
+[32m +# Solar Secure - Node Project[m
+[32m +[m
+[32m +A simple food-ordering demo application built with Node.js, Express, EJS templates and MySQL. It provides a categorized menu, product pages, a session-based shopping cart, and a basic checkout flow.[m
+[32m +[m
+[32m +## Features[m
+[32m +[m
+[32m +- Menu listing with category filters and search[m
+[32m +- Product detail pages and product listing pages[m
+[32m +- Add to cart, remove from cart, and update quantity (session-based)[m
+[32m +- Cart total calculation and order placement persisted to MySQL[m
+[32m +- Responsive UI using Bootstrap and small client-side scripts[m
+[32m +[m
+[32m +## Tech Stack[m
+[32m +[m
+[32m +- Node.js[m
+[32m +- Express[m
+[32m +- EJS templates[m
+[32m +- MySQL[m
+[32m +- Bootstrap, jQuery[m
+[32m +- express-session, body-parser[m
+[32m +[m
+[32m +## Prerequisites[m
+[32m +[m
+[32m +- Node.js (v14+ recommended)[m
+[32m +- npm[m
+[32m +- MySQL server[m
+[32m +[m
+[32m +## Setup[m
+[32m +[m
+[32m +1. Clone the repo or copy the project files to your machine.[m
+[32m +[m
+[32m +2. Install dependencies:[m
+[32m +[m
+[32m +```bash[m
+[32m +cd "d:\My Projects\Solar secure lets intern project\node_project"[m
+[32m +npm install[m
+[32m +```[m
+[32m +[m
+[32m +3. Configure the database connection in `index.js` or use environment variables (recommended). Example DB config in `index.js`:[m
+[32m +[m
+[32m +```js[m
+[32m +var con = mysql.createConnection({[m
+[32m +  host: "localhost",[m
+[32m +  user: "root",[m
+[32m +  password: "",[m
+[32m +  database: "node_project"[m
+[32m +})[m
+[32m +```[m
+[32m +[m
+[32m +Create the `products` and `orders` tables in your MySQL instance and populate `products` with sample data before running the app.[m
+[32m +[m
+[32m +## Environment variables (recommended)[m
+[32m +[m
+[32m +Instead of hardcoding credentials, create a `.env` file and use `process.env` in `index.js`. Add `.env` to `.gitignore`.[m
+[32m +[m
+[32m +Example `.env`:[m
+[32m +[m
+[32m +```[m
+[32m +DB_HOST=localhost[m
+[32m +DB_USER=root[m
+[32m +DB_PASS=[m
+[32m +DB_NAME=node_project[m
+[32m +SESSION_SECRET=your-secret[m
+[32m +```[m
+[32m +[m
+[32m +## Run the app[m
+[32m +[m
+[32m +Start the server:[m
+[32m +[m
+[32m +```bash[m
+[32m +node index.js[m
+[32m +# or with nodemon[m
+[32m +npx nodemon index.js[m
+[32m +```[m
+[32m +[m
+[32m +Open http://localhost:5000 in your browser (or the port printed in the console).[m
+[32m +[m
+[32m +## Database notes[m
+[32m +[m
+[32m +- The app expects a `products` table with columns like `id`, `name`, `description`, `price`, `sale_price`, `image` (adjust as needed).[m
+[32m +- Orders are stored in an `orders` table when a user places an order.[m
+[32m +[m
+[32m +## Git & Deployment[m
+[32m +[m
+[32m +1. Initialize git and push to GitHub:[m
+[32m +[m
+[32m +```bash[m
+[32m +git init[m
+[32m +git add .[m
+[32m +git commit -m "Initial commit"[m
+[32m +git remote add origin https://github.com/<your-username>/<repo>.git[m
+[32m +git branch -M main[m
+[32m +git push -u origin main[m
+[32m +```[m
+[32m +[m
+[32m +2. Deploy providers:[m
+[32m +[m
+[32m +- Render / Railway / Heroku / Azure App Service — connect your GitHub repo, set build & start commands to `npm install` and `npm start`, and configure environment variables and a managed MySQL instance.[m
+[32m +[m
+[32m +- For Heroku, add a `Procfile` with:[m
+[32m +[m
+[32m +```[m
+[32m +web: node index.js[m
+[32m +```[m
+[32m +[m
+[32m +## package.json[m
+[32m +[m
+[32m +Make sure `package.json` includes a `start` script:[m
+[32m +[m
+[32m +```json[m
+[32m +"scripts": {[m
+[32m +  "start": "node index.js"[m
+[32m +}[m
+[32m +```[m
+[32m +[m
+[32m +## Removing Template Attribution[m
+[32m +[m
+[32m +I removed the `All Rights Reserved By Free Html Templates` footer lines from the EJS templates in the `views/pages` directory.[m
+[32m +[m
+[32m +## Next steps (optional)[m
+[32m +[m
+[32m +- Move DB credentials to environment variables and update `index.js`.[m
+[32m +- Add migrations or a SQL seed file to create `products` and `orders` tables.[m
+[32m +- Add authentication for order management.[m
+[32m +- Improve frontend accessibility and add unit/integration tests.[m
+[32m +[m
+[32m +---[m
+[32m +[m
+[32m +If you want, I can also:[m
+[32m +- add a `start` script to `package.json`,[m
+[32m +- create a `.env.example` file, or[m
+[32m +- add a GitHub Actions workflow to automatically deploy to a provider.[m
+[32m++=======[m
+[32m+ # Solar Secure - Node Project[m
+[32m+ [m
+[32m+ A simple food-ordering demo application built with Node.js, Express, EJS templates and MySQL. It provides a categorized menu, product pages, a session-based shopping cart, and a basic checkout flow.[m
+[32m+ [m
+[32m+ ## Features[m
+[32m+ [m
+[32m+ - Menu listing with category filters and search[m
+[32m+ - Product detail pages and product listing pages[m
+[32m+ - Add to cart, remove from cart, and update quantity (session-based)[m
+[32m+ - Cart total calculation and order placement persisted to MySQL[m
+[32m+ - Responsive UI using Bootstrap and small client-side scripts[m
+[32m+ [m
+[32m+ ## Tech Stack[m
+[32m+ [m
+[32m+ - Node.js[m
+[32m+ - Express[m
+[32m+ - EJS templates[m
+[32m+ - MySQL[m
+[32m+ - Bootstrap, jQuery[m
+[32m+ - express-session, body-parser[m
+[32m+ [m
+[32m+ ## Prerequisites[m
+[32m+ [m
+[32m+ - Node.js (v14+ recommended)[m
+[32m+ - npm[m
+[32m+ - MySQL server[m
+[32m+ [m
+[32m+ ## Setup[m
+[32m+ [m
+[32m+ 1. Clone the repo or copy the project files to your machine.[m
+[32m+ [m
+[32m+ 2. Install dependencies:[m
+[32m+ [m
+[32m+ ```bash[m
+[32m+ cd "d:\My Projects\Solar secure lets intern project\node_project"[m
+[32m+ npm install[m
+[32m+ ```[m
+[32m+ [m
+[32m+ 3. Configure the database connection in `index.js` or use environment variables (recommended). Example DB config in `index.js`:[m
+[32m+ [m
+[32m+ ```js[m
+[32m+ var con = mysql.createConnection({[m
+[32m+   host: "localhost",[m
+[32m+   user: "root",[m
+[32m+   password: "",[m
+[32m+   database: "node_project"[m
+[32m+ })[m
+[32m+ ```[m
+[32m+ [m
+[32m+ Create the `products` and `orders` tables in your MySQL instance and populate `products` with sample data before running the app.[m
+[32m+ [m
+[32m+ ## Environment variables (recommended)[m
+[32m+ [m
+[32m+ Instead of hardcoding credentials, create a `.env` file and use `process.env` in `index.js`. Add `.env` to `.gitignore`.[m
+[32m+ [m
+[32m+ Example `.env`:[m
+[32m+ [m
+[32m+ ```[m
+[32m+ DB_HOST=localhost[m
+[32m+ DB_USER=root[m
+[32m+ DB_PASS=[m
+[32m+ DB_NAME=node_project[m
+[32m+ SESSION_SECRET=your-secret[m
+[32m+ ```[m
+[32m+ [m
+[32m+ ## Run the app[m
+[32m+ [m
+[32m+ Start the server:[m
+[32m+ [m
+[32m+ ```bash[m
+[32m+ node index.js[m
+[32m+ # or with nodemon[m
+[32m+ npx nodemon index.js[m
+[32m+ ```[m
+[32m+ [m
+[32m+ Open http://localhost:5000 in your browser (or the port printed in the console).[m
+[32m+ [m
+[32m+ ## Database notes[m
+[32m+ [m
+[32m+ - The app expects a `products` table with columns like `id`, `name`, `description`, `price`, `sale_price`, `image` (adjust as needed).[m
+[32m+ - Orders are stored in an `orders` table when a user places an order.[m
+[32m+ [m
+[32m+ ## Git & Deployment[m
+[32m+ [m
+[32m+ 1. Initialize git and push to GitHub:[m
+[32m+ [m
+[32m+ ```bash[m
+[32m+ git init[m
+[32m+ git add .[m
+[32m+ git commit -m "Initial commit"[m
+[32m+ git remote add origin https://github.com/<your-username>/<repo>.git[m
+[32m+ git branch -M main[m
+[32m+ git push -u origin main[m
+[32m+ ```[m
+[32m+ [m
+[32m+ 2. Deploy providers:[m
+[32m+ [m
+[32m+ - Render / Railway / Heroku / Azure App Service — connect your GitHub repo, set build & start commands to `npm install` and `npm start`, and configure environment variables and a managed MySQL instance.[m
+[32m+ [m
+[32m+ - For Heroku, add a `Procfile` with:[m
+[32m+ [m
+[32m+ ```[m
+[32m+ web: node index.js[m
+[32m+ ```[m
+[32m+ [m
+[32m+ ## package.json[m
+[32m+ [m
+[32m+ Make sure `package.json` includes a `start` script:[m
+[32m+ [m
+[32m+ ```json[m
+[32m+ "scripts": {[m
+[32m+   "start": "node index.js"[m
+[32m+ }[m
+[32m+ ```[m
+[32m+ [m
+[32m+ ## Removing Template Attribution[m
+[32m+ [m
+[32m+ I removed the `All Rights Reserved By Free Html Templates` footer lines from the EJS templates in the `views/pages` directory.[m
+[32m+ [m
+[32m+ ## Next steps (optional)[m
+[32m+ [m
+[32m+ - Move DB credentials to environment variables and update `index.js`.[m
+[32m+ - Add migrations or a SQL seed file to create `products` and `orders` tables.[m
+[32m+ - Add authentication for order management.[m
+[32m+ - Improve frontend accessibility and add unit/integration tests.[m
+[32m+ [m
+[32m+ ---[m
+[32m+ [m
+[32m+ If you want, I can also:[m
+[32m+ - add a `start` script to `package.json`,[m
+[32m+ - create a `.env.example` file, or[m
+[32m+ - add a GitHub Actions workflow to automatically deploy to a provider.[m
+[32m++>>>>>>> db83d56 (Initial commit — prepare for Render deployment)[m
